@@ -1,0 +1,58 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav class="navbar">
+        <div class="logo">
+            <img src="hermes.png" alt="Logo Hermes">
+        </div>
+        <ul class="nav-links">
+            <li><a href="ejercicio7.html">Inicio</a></li>
+            <li><a href="ejercicio5.html">Catálogo</a></li>
+            <li><a href="ejercicio6.html">Oferta</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="product-image">
+            <img src="img/blue.png" alt="">
+        </div>
+        <div class="product-info">
+            <h1>ZAPATILLAS NIKE DUNK HIGH</h1>
+            <p>Zapatillas hombre</p>
+            <div class="price">$180.000</div>
+            <p>Los Dunk High son las zapatillas clásicas y te ofrecen un nuevo look con una sensación familiar.
+               Los materiales premium con nuevos colores y texturas aportan un toque moderno a los favoritos de siempre.
+            </p>
+            <div class="size">
+                <label for="sizz">Talle:</label>
+                <select id="size">
+                    <option value="">39</option>
+                    <option value="">40</option>
+                    <option value="">41</option>
+                    <option value="">42</option>
+                    <option value="">43</option>
+                </select>
+            </div>
+            <div class="color">
+                <label for="">COLOR:</label>
+                <div class="colors">
+                    <div class="color-option" data-img="img/blue.png" data-color="#1a64c5"></div>
+                    <div class="color-option" data-img="img/black.png" data-color="#000000"></div>
+                    <div class="color-option" data-img="img/white.png" data-color="#e6eaeb"></div>
+                    <div class="color-option" data-img="img/gray.png" data-color="#8b877f"></div>
+                    <div class="color-option" data-img="img/multi.png" data-color="gradient"></div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-primary">AGREGAR AL CARRITO</button>
+                <button class="btn btn-secondary">FAVORITO</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>

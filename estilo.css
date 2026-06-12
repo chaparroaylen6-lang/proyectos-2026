@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ff9191;
+    background: linear-gradient(353deg, rgba(255, 145, 145, 1) 0%, rgba(255, 191, 112, 1) 50%, rgba(250, 213, 127, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    background-attachment: fixed; 
+}
+
+.fondo-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://64.media.tumblr.com/88c68c9b71cee5e4b84b7c35933d1fd2/010808dbad575bac-fc/s250x400/4f7b0c27677a5cec2c304c26c09e101e440c19eb.webp');
+    background-size: contain;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contenedor {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 90%;
+    max-width: 550px;
+    border-radius: 30px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(255, 145, 145, 0.4);
+    border: 3px dashed #ffb3b3;
+    z-index: 2;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    color: #ff758c;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px #ffe6e6;
+    letter-spacing: 1px;
+}
+
+.proyectos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.proyecto-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff5f5;
+    padding: 20px;
+    border-radius: 25px;
+    width: 150px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(250, 213, 127, 0.2);
+    border: 2px solid transparent;
+}
+
+.proyecto-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.proyecto-card h2 {
+    font-size: 1.2rem;
+    color: #ff9191;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-8px);
+    background: #ffe6e6;
+    border-color: #ff9191;
+    box-shadow: 0 12px 20px rgba(255, 145, 145, 0.3);
+}
+
+.proyecto-card:hover img {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.proyecto-card:hover h2 {
+    color: #ff6b6b;
+}
+
+nav {
+    margin-bottom: 25px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ff758c;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    background: #fff5f5;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px dashed #ffb3b3;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #ffe6e6;
+    color: #ff6b6b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 145, 145, 0.3);
+}
+
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px dashed #ffb3b3;
+    margin: 10px auto 20px auto;
+    display: block;
+    box-shadow: 0 10px 20px rgba(255, 145, 145, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+
+.contenedor > h2 {
+    font-family: 'Fredoka', sans-serif;
+    color: #ff758c;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.contenedor > p {
+    color: #8c6b6b;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+
+.btn {
+    background: linear-gradient(135deg, #ff9191 0%, #ff758c 100%);
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(255, 117, 140, 0.6);
+}

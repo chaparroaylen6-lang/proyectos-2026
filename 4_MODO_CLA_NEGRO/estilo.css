@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --background-page: #a3b18a;
+    --background-article: #dad7cd;
+    --color-title: #27362f;
+    --color-paragraph: #666666;
+    --toggle-color: #344e41;
+    --fill-icons: rgb(255, 255, 255);
+    --sun-icon:none;
+    --dark-icon:block;
+}
+:root:has( .switch-element:checked ){
+    --background-page: #033625;
+    --background-article: #21382d; 
+    --color-title: #dad7cd;
+    --color-paragraph: #cccccc;
+    --toggle-color: #ffffff;
+    --fill-icons: #a3b18a;
+    --sun-icon: block;
+    --dark-icon:none;
+}
+.switch-element {
+    display: none;
+}
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 90px;
+    background-color: var(--background-page);
+   transition: .3s background-color;
+}
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    color: var(--color-title);
+    margin-bottom: 2rem;
+    transition: .3s color;
+}
+.card {
+    width:300px;
+    background-color: var(--background-article);
+    padding: 1rem;
+    border-radius: 10px;}
+.card__img {
+    width: 100%;
+    display:block;
+    border-radius: 10px
+}
+.card__texts{
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+.card__title{
+    color: var(--color-title);
+    font-size: 1.4rem;
+    transition: .3s color;
+}
+.card__paragraph{
+    color: var(--color-paragraph);
+    font-size: 1rem;
+    transition: .3s color;
+}
+.toggle-mode {
+    background-color: var(--toggle-color);
+    border:none;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    display:grid;
+    place-items: center;
+    grid-template-areas: "mode";
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    animation:infinite scale alternate 3s;
+    cursor: pointer;
+}
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+.img-mode {
+    width: 20px;
+    height: 20px;
+    fill: var(--fill-icons);
+    pointer-events: none;
+    grid-area: mode;
+}
+.light{
+    display: var(--sun-icon);
+}
+.dark{
+    display: var(--dark-icon);
+}
+.switch-element{
+    width: 100px;
+    height: 100px;
+}
