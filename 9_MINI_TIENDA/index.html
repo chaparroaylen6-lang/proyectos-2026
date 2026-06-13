@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini tienda</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header class="inicio" id="inicio">
+        <h1 class="titulo">Bienvenidos a la Mini Tienda</h1>
+        <img src="https://images.vexels.com/media/users/3/200165/isolated/preview/77ff044edeca7bce4b668190e74efb17-trazo-de-icono-de-tienda.png" alt="logo" class="logo">
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li class="link"><a href="#inicio">Inicio</a></li>
+            <li class="link"><a href="#productos">Productos</a></li>
+            <li class="link"><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="products" id="productos">
+            <div class="product">
+                <img src="https://axa.com.ar/webaxa/33128-medium_default/array.jpg" alt="Producto 1">
+                <h2>Notebook HP 255 G10</h2>
+                <p>Precio: $1.437.000</p>
+                <button class="add-to-cart" data-name="Notebook HP 255 G10" data-price="1437000">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="https://axa.com.ar/webaxa/27238-medium_default/monitor-gamer-24-samsung-curvo-full-hd-144hz-4ms-dp-g50-lc24rg50fzlc.jpg" alt="Monitor Gamer 24 pulgadas Samsung">
+                <h2>Monitor Gamer 24" Samsung</h2>
+                <p>Precio: $329.900</p>
+                <button class="add-to-cart" data-name="Monitor Gamer 24 Samsung" data-price="329900">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="https://axa.com.ar/webaxa/34416-medium_default/impresora-de-sublimacion-brother-sp-1-oferta-en-6-cts-sin-interes.jpg" alt="Producto 3">
+                <h2>Impresora de Sublimación Brother SP-1</h2>
+                <p>Precio: $534.900</p>
+                <button class="add-to-cart" data-name="Impresora de Sublimación Brother SP-1" data-price="534900">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="https://axa.com.ar/webaxa/31920-medium_default/array.jpg" alt="Producto 4">
+                <h2>Router Tp-link AC1200</h2>
+                <p>Precio: $69.500</p>
+                <button class="add-to-cart" data-name="Router Tp-link AC1200" data-price="69500">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="https://axa.com.ar/webaxa/34416-medium_default/impresora-de-sublimacion-brother-sp-1-oferta-en-6-cts-sin-interes.jpg" alt="Producto 5">
+                <h2>Impresora de Sublimación Epson</h2>
+                <p>Precio: $109.900</p>
+                <button class="add-to-cart" data-name="Impresora de Sublimación Epson" data-price="109900">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="https://axa.com.ar/webaxa/30311-medium_default/parlante-bluetooth-noga-ng-bt665-liquidacion-led-colors.jpg" alt="Parlante Bluetooth Noga">
+                <h2>Parlante Bluetooth Noga</h2>
+                <p>Precio: $13.500</p>
+                <button class="add-to-cart" data-name="Parlante Bluetooth Noga" data-price="13500">Añadir al Carrito</button>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Productos Agregados al Carrito</h2>
+            <ul id="cart-list">
+                
+            </ul>
+            <p>Total: $<span id="total">0</span></p>
+        </div>
+    </div>
+    <script src="js.js"></script>
+    <footer id="contacto">
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2023 Mini Tienda. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
