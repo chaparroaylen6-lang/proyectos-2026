@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Elms Sans", sans-serif;
+    background-color: #ffe7f2;
+    margin: 0;
+    padding: 0;
+}
+
+header.inicio {
+    background-color: #ce296e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.logo {
+    width: 50px; 
+    height: auto;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav {
+    background-color: #e62c79;
+    padding: 10px 0;
+    position: relative; 
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.link a:hover {
+    background-color: #db2777;
+}
+
+
+.dropdown {
+    position: relative; 
+}
+
+.flecha {
+    font-size: 0.8rem;
+    margin-left: 3px;
+}
+
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #e62c79;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px; 
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1rem;
+    border-radius: 0;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #db2777; 
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.catalogo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.categoria h1 {
+    text-align: center;
+    color: #e62c79;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+
+.product {
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product h2 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.boton {
+    margin-top: auto;
+    background-color: #db2777;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #ce296e;
+    opacity: 0.9;
+}
+
+.cart {
+    background: white;
+    width: 350px;
+    min-width: 350px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.cart h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #ce296e;
+}
+
+#cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#cart-list li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+#cart-list button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#cart-list button:hover {
+    background-color: #c82333;
+}
+
+footer {
+    background-color: #e62c79;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.redes-sociales a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.redes-sociales a img:hover {
+    transform: scale(1.1);
+}
