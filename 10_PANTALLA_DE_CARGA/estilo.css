@@ -1,0 +1,59 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #A9C6D9;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.progress-bar {
+    position: relative;
+    width: 120px; height: 120px;
+}
+.circle {
+    transform: rotate(-90deg);
+}
+.circle-background,
+.circle-progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.circle-background {
+    stroke: #BCD5E9;
+}
+.circle-progress {
+    stroke: #0583F2;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #03258C;
+}
+
+/* Status text */
+.status {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #03258C;
+}
