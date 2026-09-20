@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoCapture Soft</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-star"></i> Y2K DigiCam <i class="fas fa-heart"></i></h1>
+        </header>
+        
+        <main class="main-content">
+            <section class="camera-section">
+                <div class="camera-rig">
+                    <img src="cam-carcasa.png" class="camera-casing" alt="Carcasa de cámara digital">
+                    
+                    <div class="video-container">
+                        <video id="video" autoplay playsinline></video>
+                    </div>
+                    <button id="snap" class="mapped-btn shutter-btn" title="Empezar / Detener Grabación"></button>
+                    <button id="toggleCamera" class="mapped-btn toggle-btn" title="¡Capturar Foto!"></button>
+                </div>
+                
+
+                <div class="photo-preview" id="photo-preview">
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <img id="photo" alt="Última foto capturada">
+                </div>
+            </section>
+            
+            <section class="gallery-section">
+                <div class="gallery-header">
+                    <h2><i class="fas fa-camera-retro"></i> Tu Galería</h2>
+                    <button class="clear-btn" id="clearGallery">Borrar todo</button>
+                </div>
+                <div id="gallery" class="gallery-grid">
+
+                </div>
+            </section>
+        </main>
+        
+        <footer class="app-footer">
+            <p>© 2026 Desarrollo de Software</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
