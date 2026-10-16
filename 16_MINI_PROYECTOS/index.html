@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos: Texto y Disolución</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+</head>
+<body>
+
+    <div class="texto" id="texto">Desarrollo de Software 2025</div>
+
+    <div class="svg-container">
+        <div class="interactive-group">
+            <img src="https://picsum.photos/600/400" alt="image interactiva">
+        </div>
+
+        <!-- SVG Filter oculto -->
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <filter id="dissolve-filter" x="-200%" y="-200%" width="500%" height="500%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="bigNoise" />
+                    <feComponentTransfer in="bigNoise" result="bigNoiseAdjusted">
+                        <feFuncR type="linear" slope="2" intercept="-0.4" />
+                        <feFuncG type="linear" slope="2" intercept="-0.4" />
+                    </feComponentTransfer>
+                    <feTurbulence type="fractalNoise" baseFrequency="1" numOctaves="2" result="fineNoise" />
+                    <feMerge result="combinedNoise">
+                        <feMergeNode in="bigNoiseAdjusted" />
+                        <feMergeNode in="fineNoise" />
+                    </feMerge>
+                    <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="0" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const texto = document.getElementById("texto");
+            const textoOriginal = texto.textContent;
+            texto.innerHTML = ""; 
+
+    
+            textoOriginal.split("").forEach((letra, index) => {
+                const span = document.createElement("span");
+                span.textContent = letra;
+                span.classList.add("letra");
+                span.style.animationDelay = `${index * 0.08}s`; 
+
+            
+                if (letra === " ") {
+                    span.style.marginRight = "1rem";
+                }
+                texto.appendChild(span);
+            });
+
+
+
+            const interactiveGroup = document.querySelector('.interactive-group');
+            const displacementMap = document.querySelector('#dissolve-filter feDisplacementMap');
+            const bigNoise = document.querySelector('#dissolve-filter feTurbulence[result="bigNoise"]');
+
+            let isAnimating = false;
+
+            function setRandomSeed() {
+                const randomSeed = Math.floor(Math.random() * 1000);
+                bigNoise.setAttribute('seed', randomSeed);
+            }
+
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            const maxDisplacementScale = 300;
+
+            interactiveGroup.addEventListener('click', () => {
+                if (isAnimating) return;
+                isAnimating = true;
+
+                setRandomSeed();
+
+                const duration = 2500;
+                const opacityStart = 0.5;
+                const startTime = performance.now();
+
+                function animate(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutCubic(progress);
+
+                   
+                    const displacementScale = easedProgress * maxDisplacementScale;
+                    displacementMap.setAttribute('scale', displacementScale);
+
+                  
+                    const scaleFactor = 1 + (0.2 * easedProgress);
+                    interactiveGroup.style.transform = `scale(${scaleFactor})`;
+
+                   
+                    let opacity = 1;
+                    if (easedProgress > opacityStart) {
+                        opacity = 1 - (easedProgress - opacityStart) / (1 - opacityStart);
+                    }
+                    interactiveGroup.style.opacity = opacity;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                       
+                        setTimeout(() => {
+                            interactiveGroup.style.opacity = 1;
+                            interactiveGroup.style.transform = 'scale(1)';
+                            displacementMap.setAttribute('scale', 0);
+                            isAnimating = false;
+                        }, 500);
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Cabin+Sketch:wght@400;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* Apila el texto y la imagen verticalmente */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #272b34; /* Fondo oscuro (de image_a8f948.png) */
+            font-family: "Cabin Sketch", sans-serif;
+            gap: 60px; /* Espaciado entre el texto y la imagen */
+            overflow: hidden;
+        }
+
+        /* --- ESTILOS DEL TEXTO ANIMADO (de image_a9080d.png) --- */
+        .texto {
+            display: flex;
+            gap: 5px;
+            font-size: 3rem; /* Tamaño ajustado para armonizar */
+        }
+
+        .letra {
+            animation: efecto 2s linear infinite;
+        }
+
+        @keyframes efecto {
+            0%, 100% {
+                color: white;
+                text-shadow: 0 0 15px #ffd900, 0 0 20px #ffd900, 0 0 30px #ffd900, 0 0 40px #ffd900;
+            }
+            5%, 95% {
+                color: #161616;
+                text-shadow: none;
+            }
+        }
+
+        /* --- ESTILOS DE LA IMAGEN Y SVG (de image_a8f948.png) --- */
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .interactive-group {
+            position: relative;
+            cursor: pointer;
+            filter: url(#dissolve-filter);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 12px;
+            transition: opacity 0.1s ease; /* Transición suave para evitar parpadeos bruscos */
+        }
+
+        img {
+            width: 25rem; /* Ancho ajustado */
+            border-radius: .9rem;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Toque extra "pro" */
+        }
+    
